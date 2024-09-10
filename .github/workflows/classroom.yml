@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: rtyr
         setup-command: ''
-        command: "./python3 main.py"
+        command: python3 main.py
         input: ''
         expected-output: '8'
         comparison-method: contains
