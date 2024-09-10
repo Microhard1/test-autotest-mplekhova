@@ -13,20 +13,20 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Lesson2
-      id: lesson2
+    - name: rtyr
+      id: rtyr
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Lesson2
+        test-name: rtyr
         setup-command: ''
-        command: python3 main.py
-        input: 1+2
-        expected-output: '4'
-        comparison-method: exact
+        command: "./python3 main.py"
+        input: ''
+        expected-output: '8'
+        comparison-method: contains
         timeout: 10
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        LESSON2_RESULTS: "${{steps.lesson2.outputs.result}}"
+        RTYR_RESULTS: "${{steps.rtyr.outputs.result}}"
       with:
-        runners: lesson2
+        runners: rtyr
